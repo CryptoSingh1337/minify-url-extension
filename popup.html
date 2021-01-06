@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minify URL</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body {
+            font-family: "Open Sans", sans-serif;
+            font-size: 14px;
+            min-height: 180px;
+            width: 384px;
+            background-color: #f5f4f4;
+        }
+
+        h1 {
+            font-family: "Montserrat", sans-serif;
+            font-size: 22px;
+            font-weight: 400;
+            margin: 0;
+            color: rgb(0, 0, 0);
+        }
+
+        a:link,
+        a:visited {
+            color: black;
+            outline: 0;
+            text-decoration: none;
+        }
+
+        img {
+            width: 30px;
+        }
+
+        .model-header {
+            align-items: center;
+            border-bottom: 0.5px solid #969696;
+            padding: 10px 0;
+        }
+
+        .model-content {
+            padding: 10px 20px;
+        }
+
+        .input-group {
+            margin-bottom: 8px;
+        }
+
+        #copy {
+            padding-top: 8px;
+        }
+
+        #copy:hover {
+            cursor: pointer;
+            transition: zoom 1;
+        }
+
+        .button {
+            padding: 0 !important;
+        }
+
+        .model-icons {
+            border-top: 0.5px solid #969696;
+            width: 100%;
+        }
+
+        .logo {
+            padding: 0px 16px;
+        }
+
+        .logo-icon {
+            vertical-align: text-bottom;
+            margin-right: 12px;
+        }
+
+        .version {
+            font-size: 18px;
+            margin-left: 35%;
+        }
+
+        .d-flex {
+            padding: 10px 20px;
+        }
+
+        .flex {
+            padding: 0 10px;
+            opacity: 1;
+            transition: opacity 0.2s ease-in-out;
+        }
+
+        .flex:hover {
+            opacity: 0.4;
+        }
+
+        .flex .fas {
+            font-size: 20px;
+        }
+
+        @-webkit-keyframes hvr-buzz-out {
+            10% {
+                -webkit-transform: translateX(3px) rotate(2deg);
+                transform: translateX(3px) rotate(2deg);
+            }
+
+            20% {
+                -webkit-transform: translateX(-3px) rotate(-2deg);
+                transform: translateX(-3px) rotate(-2deg);
+            }
+
+            30% {
+                -webkit-transform: translateX(3px) rotate(2deg);
+                transform: translateX(3px) rotate(2deg);
+            }
+
+            40% {
+                -webkit-transform: translateX(-3px) rotate(-2deg);
+                transform: translateX(-3px) rotate(-2deg);
+            }
+
+            50% {
+                -webkit-transform: translateX(2px) rotate(1deg);
+                transform: translateX(2px) rotate(1deg);
+            }
+
+            60% {
+                -webkit-transform: translateX(-2px) rotate(-1deg);
+                transform: translateX(-2px) rotate(-1deg);
+            }
+
+            70% {
+                -webkit-transform: translateX(2px) rotate(1deg);
+                transform: translateX(2px) rotate(1deg);
+            }
+
+            80% {
+                -webkit-transform: translateX(-2px) rotate(-1deg);
+                transform: translateX(-2px) rotate(-1deg);
+            }
+
+            90% {
+                -webkit-transform: translateX(1px) rotate(0);
+                transform: translateX(1px) rotate(0);
+            }
+
+            100% {
+                -webkit-transform: translateX(-1px) rotate(0);
+                transform: translateX(-1px) rotate(0);
+            }
+        }
+
+        @keyframes hvr-buzz-out {
+            10% {
+                -webkit-transform: translateX(3px) rotate(2deg);
+                transform: translateX(3px) rotate(2deg);
+            }
+
+            20% {
+                -webkit-transform: translateX(-3px) rotate(-2deg);
+                transform: translateX(-3px) rotate(-2deg);
+            }
+
+            30% {
+                -webkit-transform: translateX(3px) rotate(2deg);
+                transform: translateX(3px) rotate(2deg);
+            }
+
+            40% {
+                -webkit-transform: translateX(-3px) rotate(-2deg);
+                transform: translateX(-3px) rotate(-2deg);
+            }
+
+            50% {
+                -webkit-transform: translateX(2px) rotate(1deg);
+                transform: translateX(2px) rotate(1deg);
+            }
+
+            60% {
+                -webkit-transform: translateX(-2px) rotate(-1deg);
+                transform: translateX(-2px) rotate(-1deg);
+            }
+
+            70% {
+                -webkit-transform: translateX(2px) rotate(1deg);
+                transform: translateX(2px) rotate(1deg);
+            }
+
+            80% {
+                -webkit-transform: translateX(-2px) rotate(-1deg);
+                transform: translateX(-2px) rotate(-1deg);
+            }
+
+            90% {
+                -webkit-transform: translateX(1px) rotate(0);
+                transform: translateX(1px) rotate(0);
+            }
+
+            100% {
+                -webkit-transform: translateX(-1px) rotate(0);
+                transform: translateX(-1px) rotate(0);
+            }
+        }
+
+        .hvr-buzz-out {
+            display: inline-block;
+            vertical-align: middle;
+            -webkit-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        }
+
+        .hvr-buzz-out:hover,
+        .hvr-buzz-out:focus,
+        .hvr-buzz-out:active {
+            -webkit-animation-name: hvr-buzz-out;
+            animation-name: hvr-buzz-out;
+            -webkit-animation-duration: 0.75s;
+            animation-duration: 0.75s;
+            -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+            -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="model-header">
+        <h1 class="logo">
+            <a href="#"><img src="images/favicon_150.png" alt="Minify URL" class="logo-icon"></a> Minify URL <span
+                class="version text-muted">(1.0.0)</span>
+        </h1>
+    </div>
+    <div class="model-content text-center">
+        <p>Make Long URLs, short</p>
+        <div class="alert alert-danger visually-hidden" id="alert">
+        </div>
+        <div class="input-group">
+            <input class="form-control" type="text" name="url" id="url" placeholder="Original URL">
+            <span class="input-group-text far fa-copy hvr-buzz-out" id="copy"></span>
+        </div>
+        <div class="d-flex button justify-content-end">
+            <button class="btn btn-primary" id="submitButton" type="submit">Submit</button>
+        </div>
+    </div>
+    <div class="model-icons">
+        <div class="d-flex justify-content-end">
+            <div class="flex">
+                <a href="#">
+                    <i class="fas fa-globe"></i>
+                </a>
+            </div>
+            <div class="flex">
+                <a href="https://www.github.com/CryptoSingh1337" target="_blank">
+                    <i class="fas fa-info-circle"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>
