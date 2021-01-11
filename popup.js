@@ -24,10 +24,9 @@ document.getElementById('submitButton').addEventListener('click', async (e) => {
         const value = input.value;
         const isValid = checkURL(value);
         if (isValid) {
-            // http://localhost:5000/?url=${value}
-            const response = await (await fetch(`http://localhost:5000/?url=${value}`, { method: 'POST' })).json();
+            const response = await (await fetch(`https://minify-url-1.herokuapp.com/?url=${value}`, { method: 'POST' })).json();
             input.value = response.short_url;
-                
+
         } else {
             const alert = document.getElementById('alert');
             alert.innerHTML = 'Please enter the url<br>Like: https://www.google.com';
