@@ -14,6 +14,8 @@ function getInputField() {
     return document.getElementById('url');
 }
 
+const input = getInputField().focus();
+
 document.getElementById('submitButton').addEventListener('click', async (e) => {
     const input = getInputField();
     if (input.value === '') {
